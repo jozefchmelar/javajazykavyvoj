@@ -17,8 +17,9 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        System.out.println(Week1.numberOfLockers(7));
-      
+        //System.out.println(Week1.numberOfLockers(7));
+   //   Week2.queenProblem();
+      Week2.solve();
     }
 }
 
