@@ -5,6 +5,8 @@
  */
 package javajazykavyvoj;
 
+import javajazykavyvoj.Week2.Week2;
+
 /**
  *
  * @author jozef.chmelar.ml

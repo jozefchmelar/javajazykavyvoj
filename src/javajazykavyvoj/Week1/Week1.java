@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javajazykavyvoj;
+package javajazykavyvoj.Week1;
 
 import javajazykavyvoj.Util;
 import java.math.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import javajazykavyvoj.Util;
 
 /**
  *
