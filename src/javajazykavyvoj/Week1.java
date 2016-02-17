@@ -67,7 +67,7 @@ public class Week1 {
         class Locker {
 
             private boolean isOpen;
-            
+
             public Locker() {
                 this.isOpen = true;
             }
@@ -76,20 +76,24 @@ public class Week1 {
                 this.isOpen = !this.isOpen;
                 return this.isOpen;
             }
+
         }
 
         LinkedList<Locker> lockers = new LinkedList<>();
         int openedLockers = n;
-        for (int i = 0; i < n; i++) {
+        lockers.add(null); // no locker 0 
+        for (int i = 1; i <= n; i++) {   // locker 1-n
             lockers.add(new Locker());
         }
-        
-        for (int k = 2; k < lockers.size(); k++) {
-            for (int i = 0; i < lockers.size(); i++) {
-                if (i % k == 0) {
-                    if(lockers.get(i).visit())
+        lockers.add(null);
+        for (int k = 2; k <= n; k++) {
+            for (int numberOfLocker = 1; numberOfLocker <= n; numberOfLocker++) {
+                if (numberOfLocker % k == 0) {
+                    if (lockers.get(numberOfLocker).visit()) {
                         openedLockers++;
-                    else openedLockers--;
+                    } else {
+                        openedLockers--;
+                    }
                 }
             }
         }
