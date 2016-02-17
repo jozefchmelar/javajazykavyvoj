@@ -7,6 +7,7 @@ package javajazykavyvoj;
 
 import javajazykavyvoj.Util;
 import java.math.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -79,7 +80,7 @@ public class Week1 {
 
         }
 
-        LinkedList<Locker> lockers = new LinkedList<>();
+        ArrayList<Locker> lockers = new ArrayList<>(); // casue we use a lot of get(number) :)
         int openedLockers = n;
         lockers.add(null); // no locker 0 
         for (int i = 1; i <= n; i++) {   // locker 1-n
