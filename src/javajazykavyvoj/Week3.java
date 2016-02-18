@@ -68,7 +68,7 @@ public class Week3 {
     }
 
     public static String baseConverter(int numberToConvert, int base1, int base2) {
-        String number = numberToConvert + "";
+        String number = numberToConvert + ""; //:) parseInt takes string as paramter.
         return Integer.toString(Integer.parseInt(number, base1), base2);
     }
 
@@ -79,8 +79,8 @@ public class Week3 {
      */
     public static double simpleCalc(String expression) {
         expression = Util.removeSpaces(expression);
-        String[] numbers = expression.split("[+\\*/-]"); //separate /*+- from digits
-        String operator = expression.replaceAll("[^+\\*/-]", ""); // separate digits from /*+- :)
+        String[] numbers = expression.split("[+\\*/-]");            //separate /*+- from digits
+        String operator = expression.replaceAll("[^+\\*/-]", "");   // separate digits from /*+- :)
         double a = Double.parseDouble(numbers[0]);
         double b = Double.parseDouble(numbers[1]);
         switch (operator) {
@@ -93,8 +93,8 @@ public class Week3 {
             case "-":
                 return a - b;
         }
-
-        return Integer.MIN_VALUE;
+        
+        return Integer.MIN_VALUE; //sometimes this calculator is correct.
     }
 
     public static double simpleCalc2(String expression) {
