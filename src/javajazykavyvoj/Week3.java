@@ -7,12 +7,15 @@ package javajazykavyvoj;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import sun.font.Script;
+import sun.text.normalizer.UBiDiProps;
 
 /**
  *
@@ -20,10 +23,8 @@ import sun.font.Script;
  */
 public class Week3 {
 
-    public static boolean checkIfPalindrom(String word) {
-
-        StringBuilder sb = new StringBuilder(word);
-        return sb.reverse().toString().equals(word);
+    public static boolean isPalindrome(String word) {
+        return Util.reverse(word).equals(word);
     }
 
     public static String sentenceOperation(String sentence, char operator) {
@@ -33,7 +34,6 @@ public class Week3 {
             case 'L':
                 //-l -L skonvertovať všetky písmena vo vete na male 
                 return sentence.toLowerCase();
-
             case 'u':
             case 'U':
 //                -u -U skonvertovať všetky písmena vo vete na veľké 
@@ -41,7 +41,6 @@ public class Week3 {
             case 'r':
             case 'R':
 //                -r -R skonvertovať všetky písmena vo vete na opačnej veľkosti než boli v pôvodnej vete 
-
                 for (char ch : sentence.toCharArray()) {
                     if (Character.isLowerCase(ch)) {
                         result += Character.toUpperCase(ch);
@@ -54,11 +53,14 @@ public class Week3 {
                 return result;
             case 'c':
             case 'C':
-//                -c -C skonvertovať všetky začiatočné písmená slov vo vete na veľké 
-                String[] tokens = sentence.trim().split("\\s"); // escape or whitespace  and trimming because we could have "     striing    "; 
-                for (int i = 0; i < tokens.length; i++) {
-                    char capLetter = Character.toUpperCase(tokens[i].charAt(0));
-                    result += " " + capLetter + tokens[i].substring(1);
+                //-c -C skonvertovať všetky začiatočné písmená slov vo vete na veľké 
+                // I split whole string at every \s into array then into arraylist
+                // and now every word's first letter is at words[x][0]
+                String[] split = sentence.trim().split("\\s");
+                ArrayList<String> words = new ArrayList<>(Arrays.asList(split));
+                for(String word: words){
+                    char capLetter = Character.toUpperCase(word.charAt(0));
+                    result += " " + capLetter + word.substring(1);
                 }
                 return result.trim();
         }
@@ -76,7 +78,7 @@ public class Week3 {
      *
      */
     public static double simpleCalc(String expression) {
-        expression = expression.replaceAll("\\s", ""); //remove spaces
+        expression = Util.removeSpaces(expression);
         String[] numbers = expression.split("[+\\*/-]"); //separate /*+- from digits
         String operator = expression.replaceAll("[^+\\*/-]", ""); // separate digits from /*+- :)
         double a = Double.parseDouble(numbers[0]);

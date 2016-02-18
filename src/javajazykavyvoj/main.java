@@ -21,8 +21,8 @@ public class main {
 //        Pirates.solve();
 //        Pirates p = new Pirates();
 //        p.solve();
-//       System.out.println( Week3.checkIfPalindrom("oko"));
-//        System.out.println(Week3.sentenceOperation("        zvac Kazde pismeno na zaciatku Vety ok?", 'c'));
+       System.out.println( Week3.isPalindrome("oko"));
+        System.out.println(Week3.sentenceOperation("        zvac Kazde pismeno na zaciatku Vety ok?", 'c'));
 //        System.out.println(Week3.baseConverter(465, 10, 2));
         System.out.println(Week3.simpleCalc("5498465.5446     /     5"));
         System.out.println(Week3.simpleCalc2("5498465.5446     /     5"));
