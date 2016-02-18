@@ -24,7 +24,15 @@ import sun.text.normalizer.UBiDiProps;
 public class Week3 {
 
     public static boolean isPalindrome(String word) {
-        return Util.reverse(word).equals(word);
+        /**
+         * Pri posudzovaní, či ide o rovnaký význam sa obvykle neberú do úvahy
+         * medzery medzi slovami a diakritika (ak je použitá).
+         * https://sk.wikipedia.org/wiki/Palindr%C3%B3m
+         */
+        word = word.replaceAll("\\W", ""); //ignore ./**+6+--*?<></
+        word = word.toLowerCase();
+        word = Util.removeSpaces(word);
+        return Util.reverse(word).equals(word); // :) hehe
     }
 
     public static String sentenceOperation(String sentence, char operator) {
@@ -33,11 +41,11 @@ public class Week3 {
             case 'l':
             case 'L':
                 //-l -L skonvertovať všetky písmena vo vete na male 
-                return sentence.toLowerCase();
+                return sentence.toLowerCase().trim();
             case 'u':
             case 'U':
 //                -u -U skonvertovať všetky písmena vo vete na veľké 
-                return sentence.toUpperCase();
+                return sentence.toUpperCase().trim();
             case 'r':
             case 'R':
 //                -r -R skonvertovať všetky písmena vo vete na opačnej veľkosti než boli v pôvodnej vete 
@@ -50,7 +58,7 @@ public class Week3 {
                         result += ch;
                     }
                 }
-                return result;
+                return result.trim();
             case 'c':
             case 'C':
                 //-c -C skonvertovať všetky začiatočné písmená slov vo vete na veľké 
@@ -58,7 +66,7 @@ public class Week3 {
                 // and now every word's first letter is at words[x][0]
                 String[] split = sentence.trim().split("\\s");
                 ArrayList<String> words = new ArrayList<>(Arrays.asList(split));
-                for(String word: words){
+                for (String word : words) {
                     char capLetter = Character.toUpperCase(word.charAt(0));
                     result += " " + capLetter + word.substring(1);
                 }
@@ -93,7 +101,7 @@ public class Week3 {
             case "-":
                 return a - b;
         }
-        
+
         return Integer.MIN_VALUE; //sometimes this calculator is correct.
     }
 
