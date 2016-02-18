@@ -5,8 +5,6 @@
  */
 package javajazykavyvoj;
 
-import javajazykavyvoj.Week2.Week2;
-
 /**
  *
  * @author jozef.chmelar.ml
@@ -20,9 +18,15 @@ public class main {
         // TODO code application logic here
 
         //System.out.println(Week1.numberOfLockers(7));
-   //   Week2.queenProblem();
-      Week2.solve();
+//        Pirates.solve();
+//        Pirates p = new Pirates();
+//        p.solve();
+//       System.out.println( Week3.checkIfPalindrom("oko"));
+//        System.out.println(Week3.sentenceOperation("        zvac Kazde pismeno na zaciatku Vety ok?", 'c'));
+//        System.out.println(Week3.baseConverter(465, 10, 2));
+        System.out.println(Week3.simpleCalc("5498465.5446     /     5"));
+        System.out.println(Week3.simpleCalc2("5498465.5446     /     5"));
+
+        // Week3.grep(".+mp3", ' ');
     }
 }
-
- 

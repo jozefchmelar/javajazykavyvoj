@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javajazykavyvoj.Week1;
+package javajazykavyvoj;
 
 import javajazykavyvoj.Util;
 import java.math.*;
@@ -51,7 +51,7 @@ public class Week1 {
     }
     //
 
-    /**
+    /**Priklad so skrinkami
      * 3. V skole je n (napr. n=100) skriniek na veci pre studentov. Na zaciatku
      * su vsetky skrinky otvorene. Pride skolnik a pre kazdu druhu skrinku v
      * poradi urobi nasledujucu operaciu: ak je skrinka otvorena tak ju zatvori,

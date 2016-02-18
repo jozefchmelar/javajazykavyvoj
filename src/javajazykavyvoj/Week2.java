@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javajazykavyvoj.Week2;
+package javajazykavyvoj;
 
 import java.text.DecimalFormat;
 
@@ -17,9 +17,9 @@ public class Week2 {
     private static final char box = '#';
 
     /**
-     * Rozmiestnite na šachovnici 8 dám tak, aby sa navzájom neohrozovali,
-     * uvažujte šachovnicu 8x8 a pravidlá pre pohyb figúr podľa bežných
-     * šachových pravidiel.
+     * Vrati sachovnicu Rozmiestnite na šachovnici 8 dám tak, aby sa navzájom
+     * neohrozovali, uvažujte šachovnicu 8x8 a pravidlá pre pohyb figúr podľa
+     * bežných šachových pravidiel.
      *
      * @param n
      */
@@ -33,6 +33,10 @@ public class Week2 {
         return board;
     }
 
+    /**
+     * Problem 8 dam
+     *
+     */
     public static void queenProblem() {
         //If n is even and n ≠ 6k, then place queens at (i, 1 + (2i + n/2 - 3 (mod n))) and (n + 1 - i, n - (2i + n/2 - 3 (mod n))) for i = 1,2,...,n/2.
         //https://en.wikipedia.org/wiki/Eight_queens_puzzle
@@ -49,7 +53,6 @@ public class Week2 {
             System.out.println(numberToLetter(x) + " " + y);
             board[x][y] = queen;
         }
-
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
                 System.out.print(board[i][j]);
@@ -58,18 +61,23 @@ public class Week2 {
         }
     }
 
+    /**
+     * Converts a->1 b->2 etc.
+     *
+     * @param number
+     * @return
+     */
     private static char numberToLetter(int number) {
         return (char) (number + '`');
     }
-/////////////////////////////////////////////////////////////////////////
-    /**
-     * 2. Nájdite cestu šachového koňa po šachovnici tak, aby prešiel všetky
+
+    /**Nájdite cestu šachového koňa po šachovnici tak, aby prešiel všetky
      * políčka
      */
     private static int[][] solution;
     private static int path = 0;
-    
-    private  static void KnightTour(int N) {
+
+    private static void KnightTour(int N) {
         solution = new int[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -81,24 +89,24 @@ public class Week2 {
     public static void solve() {
         KnightTour(8);
         if (findPath(0, 0, 0, solution.length)) {
-                print();
+            print();
         } else {
             System.out.println("NO PATH FOUND");
         }
     }
 
-	private static void print() {
-		DecimalFormat twodigits = new DecimalFormat("00");
-		for (int i = 0; i < solution.length; i++) {
-			for (int j = 0; j < solution.length; j++) {
-				System.out.print("   " + twodigits.format(solution[i][j]));
-			}
-			System.out.println();
-		}
-	}
-        
-    private static  boolean findPath(int row, int column, int index, int N) {
-        
+    private static void print() {
+        DecimalFormat twodigits = new DecimalFormat("00");
+        for (int i = 0; i < solution.length; i++) {
+            for (int j = 0; j < solution.length; j++) {
+                System.out.print("   " + twodigits.format(solution[i][j]));
+            }
+            System.out.println();
+        }
+    }
+
+    private static boolean findPath(int row, int column, int index, int N) {
+
         //http://www.wou.edu/~broegb/Cs345/KnightTour.pdf
         // check if current is not used already
         if (solution[row][column] != 0) {
@@ -168,4 +176,3 @@ public class Week2 {
     }
 
 }
-  
