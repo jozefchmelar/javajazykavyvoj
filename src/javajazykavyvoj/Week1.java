@@ -38,13 +38,12 @@ public class Week1 {
      * @param epsilon perfection.
      * @return
      */
-    public static double sin(final double x, final int epsilon) {
-        double result = x;
+    public static double sin( double x, final int epsilon) {       
         int pow = 3;
         for (int i = 3; i <= epsilon; i += 2) {
-            result += Math.pow(-1, pow++) * (Math.pow(x, i) / Util.factorial(i));
+            x += Math.pow(-1, pow++) * (Math.pow(x, i) / Util.factorial(i));
         }
-        return result;
+        return x;
     }
     //
 
@@ -81,14 +80,14 @@ public class Week1 {
 
         ArrayList<Locker> lockers = new ArrayList<>(); // casue we use a lot of get(number) :)
         int openedLockers = n;
-        lockers.add(null); // no locker 0 
+        lockers.add(null); // no locker 0 , we start couting from locker no.1 so my get(1) is locker no 1
         for (int i = 1; i <= n; i++) {   // locker 1-n
             lockers.add(new Locker());
         }       
         for (int k = 2; k <= n; k++) { // k-nth locker 
-            for (int numberOfLocker = 1; numberOfLocker <= n; numberOfLocker++) {
-                if (numberOfLocker % k == 0) {
-                    if (lockers.get(numberOfLocker).visit()) {
+            for (int lockerNumber = 1; lockerNumber <= n; lockerNumber++) {
+                if (lockerNumber % k == 0) {
+                    if (lockers.get(lockerNumber).visit()) {
                         openedLockers++;
                     } else {
                         openedLockers--;

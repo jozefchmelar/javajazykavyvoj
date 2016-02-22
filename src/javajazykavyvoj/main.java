@@ -17,9 +17,9 @@ package javajazykavyvoj;
     public static void main(String[] args) {
         // TODO code application logic here
 
-        System.out.println(Week1.nearestPrime(40));
+//        System.out.println(Week1.nearestPrime(40));
         System.out.println(Week1.sin(0.1, 5));
-        System.out.println(Week1.numberOfLockers(7));
+//        System.out.println(Week1.numberOfLockers(7));
 //        Week2.queenProblem();
 //        Week2.solve();
 //        Week2.pirati - nemam
