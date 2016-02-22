@@ -55,8 +55,8 @@ public class Week2 {
             board[x][y] = QUEEN;
             x = chessboardSize + 1 - i;
             y = chessboardSize - ((2 * i + chessboardSize / 2 - 3) % chessboardSize);
-            System.out.println(numberToLetter(x) + " " + y);
             board[x][y] = QUEEN;
+            System.out.println(numberToLetter(x) + " " + y);
         }
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
