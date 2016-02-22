@@ -23,7 +23,7 @@ public class Week1 {
     public static int nearestPrime(int beginning) {
         if (beginning > 0) {
             if (!Util.isPrime(beginning)) {
-                while (!Util.isPrime(++beginning)); //TODO TODODOTODOTOO DOTO
+                while (!Util.isPrime(++beginning)); 
             }
 
             return beginning;
