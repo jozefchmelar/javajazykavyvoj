@@ -47,7 +47,6 @@ public class Week1 {
         }
         return x;
     }
-    //
 
     /**
      * Priklad so skrinkami 3. V skole je n (napr. n=100) skriniek na veci pre

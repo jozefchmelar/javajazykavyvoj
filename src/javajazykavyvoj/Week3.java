@@ -13,6 +13,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+
 /**
  *
  * @author jozef.chmelar.ml
@@ -61,7 +62,7 @@ public class Week3 {
                 // I split whole string at every \s into array then into arraylist
                 // and now every word's first letter is at words[x][0]
                 String[] split = sentence.trim().split("\\s");
-                ArrayList<String> words = new ArrayList<>(Arrays.asList(split));
+                ArrayList<String> words = new ArrayList<>(Arrays.asList(split));               
                 for (String word : words) {
                     char capLetter = Character.toUpperCase(word.charAt(0));
                     result += " " + capLetter + word.substring(1);
