@@ -5,17 +5,13 @@
  */
 package javajazykavyvoj;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import sun.font.Script;
-import sun.text.normalizer.UBiDiProps;
 
 /**
  *

@@ -13,8 +13,8 @@ import java.text.DecimalFormat;
  */
 public class Week2 {
 
-    private static final char queen = 'Q';
-    private static final char box = '#';
+    private static final char QUEEN = '♖';
+    private static final char SQUARE = '■';
 
     /**
      * Vrati sachovnicu Rozmiestnite na šachovnici 8 dám tak, aby sa navzájom
@@ -27,7 +27,7 @@ public class Week2 {
         char[][] board = new char[size + 1][size + 1];
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
-                board[i][j] = box;
+                board[i][j] = SQUARE;
             }
         }
         return board;
@@ -47,11 +47,11 @@ public class Week2 {
             x = i;
             y = 1 + ((2 * i + n / 2 - 3) % n);
             System.out.println(numberToLetter(x) + " " + y);
-            board[x][y] = queen;
+            board[x][y] = QUEEN;
             x = n + 1 - i;
             y = n - ((2 * i + n / 2 - 3) % n);
             System.out.println(numberToLetter(x) + " " + y);
-            board[x][y] = queen;
+            board[x][y] = QUEEN;
         }
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {

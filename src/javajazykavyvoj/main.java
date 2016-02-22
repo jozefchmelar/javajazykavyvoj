@@ -5,11 +5,11 @@
  */
 package javajazykavyvoj;
 
-/**
- *
- * @author jozef.chmelar.ml
- */
-public class main {
+    /**
+     *
+     * @author jozef.chmelar.ml
+     */
+    public class main {
 
     /**
      * @param args the command line arguments
@@ -17,20 +17,20 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
 
-//        System.out.println(Week1.nearestPrime(40));
-//        System.out.println(Week1.sin(41, 5));
-//        System.out.println(Week1.numberOfLockers(7));
+        System.out.println(Week1.nearestPrime(40));
+        System.out.println(Week1.sin(0.1, 5));
+        System.out.println(Week1.numberOfLockers(7));
 //        Week2.queenProblem();
 //        Week2.solve();
 //        Week2.pirati - nemam
-        Week3.baseConverter(55, 10, 12);
-        System.out.println(Week3.isPalindrome("Matika má mak i tam."));
-        System.out.println(Week3.sentenceOperation("vsetky male na VELKE", 'l'));
-        System.out.println(Week3.sentenceOperation("  VSETKY VELKE na male", 'u'));
-        System.out.println(Week3.sentenceOperation("  VsEtkY VelkE na Male VIce versa", 'r'));
-        System.out.println(Week3.sentenceOperation("     zvac Kazde pismeno na zaciaku vety ok?", 'c'));
-        System.out.println(Week3.simpleCalc("5498465.5446     /     5"));
-        System.out.println(Week3.simpleCalc2("5498465.5446     /     5"));
-        Week3.grep(".+mp3", ' ');
+//        Week3.baseConverter(55, 10, 12);
+//        System.out.println(Week3.isPalindrome("Matika má mak i tam."));
+//        System.out.println(Week3.sentenceOperation("vsetky male na VELKE", 'l'));
+//        System.out.println(Week3.sentenceOperation("  VSETKY VELKE na male", 'u'));
+//        System.out.println(Week3.sentenceOperation("  VsEtkY VelkE na Male VIce versa", 'r'));
+//        System.out.println(Week3.sentenceOperation("     zvac Kazde pismeno na zaciaku vety ok?", 'c'));
+//        System.out.println(Week3.simpleCalc("5498465.5446     /     5"));
+//        System.out.println(Week3.simpleCalc2("5498465.5446     /     5"));
+//        Week3.grep(".+mp3", ' ');
     }
 }

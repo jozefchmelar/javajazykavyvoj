@@ -5,11 +5,7 @@
  */
 package javajazykavyvoj;
 
-import javajazykavyvoj.Util;
-import java.math.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import javajazykavyvoj.Util;
 
 /**
  *
@@ -18,9 +14,10 @@ import javajazykavyvoj.Util;
 public class Week1 {
 
     /**
-     * Načítať celé číslo >0, vypísať najbližšie väčšie prvočíslo.
-     *
-     * @param beginning number >0
+     * Načítať celé číslo >0, vypísať najbližšie väčšie prvočíslo.@param
+     * beginning number >0
+     * @param beginning
+     * @return nearest prime number to beginning 
      */
     public static int nearestPrime(int beginning) {
         if (beginning > 0) {
@@ -45,22 +42,23 @@ public class Week1 {
         double result = x;
         int pow = 3;
         for (int i = 3; i <= epsilon; i += 2) {
-            result += Math.pow(-1, pow++) * (i * x / Util.factorial(i));
+            result += Math.pow(-1, pow++) * (Math.pow(x, i) / Util.factorial(i));
         }
         return result;
     }
     //
 
-    /**Priklad so skrinkami
-     * 3. V skole je n (napr. n=100) skriniek na veci pre studentov. Na zaciatku
-     * su vsetky skrinky otvorene. Pride skolnik a pre kazdu druhu skrinku v
-     * poradi urobi nasledujucu operaciu: ak je skrinka otvorena tak ju zatvori,
-     * ak je zatvorena, tak ju otvori. Ked pride na koniec radu skriniek, vrati
-     * sa na zaciatok a zacne opat od zaciatku vykonavat tu istu operaciu, ale
-     * teraz pre kazdu tretiu skrinku. No a takto to pokracuje, skolnik sa vzdy
-     * vrati na zaciatok a robi definovanu operaciu pre kazdu k-tu skrinku od
-     * zaciatku, pricom k sa zvacsuje od 2 po n. //Otazka znie: ktore skrinky
-     * budu po tomto procese otvorene a preco? (rieste pre n=100)
+    /**
+     * Priklad so skrinkami 3. V skole je n (napr. n=100) skriniek na veci pre
+     * studentov. Na zaciatku su vsetky skrinky otvorene. Pride skolnik a pre
+     * kazdu druhu skrinku v poradi urobi nasledujucu operaciu: ak je skrinka
+     * otvorena tak ju zatvori, ak je zatvorena, tak ju otvori. Ked pride na
+     * koniec radu skriniek, vrati sa na zaciatok a zacne opat od zaciatku
+     * vykonavat tu istu operaciu, ale teraz pre kazdu tretiu skrinku. No a
+     * takto to pokracuje, skolnik sa vzdy vrati na zaciatok a robi definovanu
+     * operaciu pre kazdu k-tu skrinku od zaciatku, pricom k sa zvacsuje od 2 po
+     * n. //Otazka znie: ktore skrinky budu po tomto procese otvorene a preco?
+     * (rieste pre n=100)
      *
      * @param n number of lockers
      * @return
@@ -86,9 +84,8 @@ public class Week1 {
         lockers.add(null); // no locker 0 
         for (int i = 1; i <= n; i++) {   // locker 1-n
             lockers.add(new Locker());
-        }
-        lockers.add(null);
-        for (int k = 2; k <= n; k++) {
+        }       
+        for (int k = 2; k <= n; k++) { // k-nth locker 
             for (int numberOfLocker = 1; numberOfLocker <= n; numberOfLocker++) {
                 if (numberOfLocker % k == 0) {
                     if (lockers.get(numberOfLocker).visit()) {
