@@ -5,11 +5,11 @@
  */
 package javajazykavyvoj;
 
-    /**
-     *
-     * @author jozef.chmelar.ml
-     */
-    public class main {
+/**
+ *
+ * @author jozef.chmelar.ml
+ */
+public class main {
 
     /**
      * @param args the command line arguments
@@ -17,11 +17,11 @@ package javajazykavyvoj;
     public static void main(String[] args) {
         // TODO code application logic here
 
-//        System.out.println(Week1.nearestPrime(40));
+        System.out.println(Week1.nearestPrime(40));
         System.out.println(Week1.sin(0.1, 5));
-//        System.out.println(Week1.numberOfLockers(7));
+        System.out.println(Week1.numberOfLockers(7));
 //        Week2.queenProblem();
-//        Week2.solve();
+//        Week2.solveKingsTraversal();
 //        Week2.pirati - nemam
 //        Week3.baseConverter(55, 10, 12);
 //        System.out.println(Week3.isPalindrome("Matika má mak i tam."));
