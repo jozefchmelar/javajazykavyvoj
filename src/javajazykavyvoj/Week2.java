@@ -14,7 +14,8 @@ import java.text.DecimalFormat;
 public class Week2 {
 
     private static final char QUEEN = '♖';
-    private static final char SQUARE = '■';
+    private static final char BLACKSUARE = '■';
+    private static final char WHITESQUARE = '□';
 
     /**
      * Vrati sachovnicu Rozmiestnite na šachovnici 8 dám tak, aby sa navzájom
@@ -27,7 +28,11 @@ public class Week2 {
         char[][] board = new char[size + 1][size + 1];
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
-                board[i][j] = SQUARE;
+                if ((i + j) % 2 == 0) {
+                    board[i][j] = WHITESQUARE;
+                } else {
+                    board[i][j] = BLACKSUARE;
+                }
             }
         }
         return board;
@@ -55,7 +60,8 @@ public class Week2 {
         }
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
-                System.out.print("  "+board[i][j]);
+                String test = "" + board[i][j];
+                System.out.printf("%-1s ", test);
             }
             System.out.println();
         }
