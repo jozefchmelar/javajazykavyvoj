@@ -60,10 +60,10 @@ public class Week1 {
      * n. //Otazka znie: ktore skrinky budu po tomto procese otvorene a preco?
      * (rieste pre n=100)
      *
-     * @param n number of lockers
+     * @param numberOfLockers number of lockers
      * @return
      */
-    public static int numberOfLockers(int n) {
+    public static int lockerProblem(int numberOfLockers) {
         class Locker {
 
             private boolean isOpen;
@@ -80,13 +80,13 @@ public class Week1 {
         }
 
         ArrayList<Locker> lockers = new ArrayList<>(); // casue we use a lot of get(number) :)
-        int openedLockers = n;
+        int openedLockers = numberOfLockers;
         lockers.add(null); // no locker 0 , we start couting from locker no.1 so my get(1) is locker no 1
-        for (int i = 1; i <= n; i++) {   // locker 1-n
+        for (int i = 1; i <= numberOfLockers; i++) {   // locker 1-n
             lockers.add(new Locker());
         }
-        for (int k = 2; k <= n; k++) { // k-nth locker 
-            for (int lockerNumber = 1; lockerNumber <= n; lockerNumber++) {
+        for (int k = 2; k <= numberOfLockers; k++) { // k-nth locker 
+            for (int lockerNumber = 1; lockerNumber <= numberOfLockers; lockerNumber++) {
                 if (lockerNumber % k == 0) {
                     if (lockers.get(lockerNumber).visit()) {
                         openedLockers++;
