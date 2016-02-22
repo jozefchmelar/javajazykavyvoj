@@ -5,17 +5,7 @@
  */
 package javajazykavyvoj;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
-import java.io.Console;
 import java.text.DecimalFormat;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 /**
  *

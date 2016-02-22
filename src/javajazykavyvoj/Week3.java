@@ -6,9 +6,7 @@
 package javajazykavyvoj;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Arrays; 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -114,7 +112,7 @@ public class Week3 {
         try {
             return (double) engine.eval(expression);
         } catch (ScriptException ex) {
-            Logger.getLogger(Week3.class.getName()).log(Level.SEVERE, null, ex);
+         //   Logger.getLogger(Week3.class.getName()).log(Level.SEVERE, null, ex);
         }
         return -1;
     }
