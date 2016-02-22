@@ -13,7 +13,6 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-
 /**
  *
  * @author jozef.chmelar.ml
@@ -60,16 +59,20 @@ public class Week3 {
             case 'C':
                 //-c -C skonvertovať všetky začiatočné písmená slov vo vete na veľké 
                 // I split whole string at every \s into array then into arraylist
-                // and now every word's first letter is at words[x][0]
-                String[] split = sentence.trim().split("\\s");
-                ArrayList<String> words = new ArrayList<>(Arrays.asList(split));               
+                // and now every word's first letter is at words[x][0]                     
+                String[] split = sentence.replaceAll("\\s{2,}", " ").trim().split("\\s"); // remove more than one spaces between words, split based on spaces, trim is important and i don't know why.
+                ArrayList<String> words = new ArrayList<>(Arrays.asList(split));
                 for (String word : words) {
-                    char capLetter = Character.toUpperCase(word.charAt(0));
-                    result += " " + capLetter + word.substring(1);
+                    //char capLetter = Character.toUpperCase(word.charAt(0));
+                    result += " " + capitalizeFirstChar(word);
                 }
                 return result.trim();
         }
         return "fail";
+    }
+
+    private static String capitalizeFirstChar(String word) {
+        return Character.toUpperCase(word.charAt(0)) + word.substring(1);
     }
 
     public static String baseConverter(int numberToConvert, int base1, int base2) {
