@@ -14,8 +14,8 @@ import java.text.DecimalFormat;
 public class Week2 {
 
     private static final char QUEEN = '♖';
-    private static final char BLACKSUARE = '■';
-    private static final char WHITESQUARE = '□';
+    private static final char BLACK_SQUARE = '■';
+    private static final char WHITE_SQUARE = '□';
 
     /**
      * Vrati sachovnicu Rozmiestnite na šachovnici 8 dám tak, aby sa navzájom
@@ -29,12 +29,12 @@ public class Week2 {
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
                 if ((i + j) % 2 == 0) {
-                    board[i][j] = WHITESQUARE;
+                    board[i][j] = WHITE_SQUARE;
                 } else {
-                    board[i][j] = BLACKSUARE;
+                    board[i][j] = BLACK_SQUARE;
                 }
             }
-        }
+        }        
         return board;
     }
 
@@ -61,10 +61,9 @@ public class Week2 {
             for (int j = 8; j >= 1; j--) {
                 String test = "" + board[i][j];
                 System.out.printf("%1s ", test);
-            }     
+            }
             System.out.println();
         }
-
     }
 
     /**
@@ -173,7 +172,6 @@ public class Week2 {
         solution[row][column] = 0;
         path--;
         return false;
-
     }
 
     private static boolean canMove(int row, int col, int N) {
