@@ -80,6 +80,8 @@ public class Week3 {
      * Na vstupe je zadaný jednoduchý matematický výraz, napr. 12.45 * 45.8
      * Vyčíslite ho a výsledok vypíšte na konzolu.
      *
+     * @param expression
+     * @return result of expression
      */
     public static double simpleCalc(String expression) {
         expression = Util.removeSpaces(expression);
@@ -148,11 +150,11 @@ public class Week3 {
         for (String s : sample) {
             if (option == 'v') {
                 if (!s.matches(regex)) {
-                    System.out.println(s.toString());
+                    System.out.println(s);
                     count++;
                 }
             } else if (s.matches(regex)) {
-                System.out.println(s.toString());
+                System.out.println(s);
                 count++;
             }
         }

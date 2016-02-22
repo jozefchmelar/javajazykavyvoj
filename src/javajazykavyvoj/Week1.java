@@ -16,8 +16,9 @@ public class Week1 {
     /**
      * Načítať celé číslo >0, vypísať najbližšie väčšie prvočíslo.@param
      * beginning number >0
+     *
      * @param beginning
-     * @return nearest prime number to beginning 
+     * @return nearest prime number to beginning
      */
     public static int nearestPrime(int beginning) {
         if (beginning > 0) {
@@ -38,7 +39,7 @@ public class Week1 {
      * @param epsilon perfection.
      * @return
      */
-    public static double sin( double x, final int epsilon) {       
+    public static double sin(double x, final int epsilon) {
         int pow = 3;
         for (int i = 3; i <= epsilon; i += 2) {
             x += Math.pow(-1, pow++) * (Math.pow(x, i) / Util.factorial(i));
@@ -83,7 +84,7 @@ public class Week1 {
         lockers.add(null); // no locker 0 , we start couting from locker no.1 so my get(1) is locker no 1
         for (int i = 1; i <= n; i++) {   // locker 1-n
             lockers.add(new Locker());
-        }       
+        }
         for (int k = 2; k <= n; k++) { // k-nth locker 
             for (int lockerNumber = 1; lockerNumber <= n; lockerNumber++) {
                 if (lockerNumber % k == 0) {

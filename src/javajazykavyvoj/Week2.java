@@ -40,16 +40,16 @@ public class Week2 {
     public static void queenProblem() {
         //If n is even and n ≠ 6k, then place queens at (i, 1 + (2i + n/2 - 3 (mod n))) and (n + 1 - i, n - (2i + n/2 - 3 (mod n))) for i = 1,2,...,n/2.
         //https://en.wikipedia.org/wiki/Eight_queens_puzzle
-        int n = 8;
+        final int chessboardSize = 8;
         int x, y;
-        char board[][] = getEmptyChessboard(n);
-        for (int i = 1; i <= n / 2; i++) {
+        char board[][] = getEmptyChessboard(chessboardSize);
+        for (int i = 1; i <= chessboardSize / 2; i++) {
             x = i;
-            y = 1 + ((2 * i + n / 2 - 3) % n);
+            y = 1 + ((2 * i + chessboardSize / 2 - 3) % chessboardSize);
             System.out.println(numberToLetter(x) + " " + y);
             board[x][y] = QUEEN;
-            x = n + 1 - i;
-            y = n - ((2 * i + n / 2 - 3) % n);
+            x = chessboardSize + 1 - i;
+            y = chessboardSize - ((2 * i + chessboardSize / 2 - 3) % chessboardSize);
             System.out.println(numberToLetter(x) + " " + y);
             board[x][y] = QUEEN;
         }
@@ -71,8 +71,9 @@ public class Week2 {
         return (char) (number + '`');
     }
 
-    /**Nájdite cestu šachového koňa po šachovnici tak, aby prešiel všetky
-     * políčka
+    /**
+     * Nájdite cestu šachového koňa po šachovnici tak, aby prešiel všetky horse
+     * can move x+-2 y+-1 or x+-1 y+-2 políčka
      */
     private static int[][] solution;
     private static int path = 0;
@@ -86,7 +87,7 @@ public class Week2 {
         }
     }
 
-    public static void solve() {
+    public static void solveKingsTraversal() {
         KnightTour(8);
         if (findPath(0, 0, 0, solution.length)) {
             print();
@@ -119,8 +120,8 @@ public class Week2 {
             // if we are here means we have solved the problem
             return true;
         }
-        // try to solve the rest of the problem recursively
-
+        // horse can move x+-2 y+-1 or x+-1 y+-2   ...try to solve the rest of the problem recursively
+        // it's really bad, and hungry algorthim :)
         // go down and right
         if (canMove(row + 2, column + 1, N)
                 && findPath(row + 2, column + 1, index + 1, N)) {
@@ -169,10 +170,7 @@ public class Week2 {
     }
 
     private static boolean canMove(int row, int col, int N) {
-        if (row >= 0 && col >= 0 && row < N && col < N) {
-            return true;
-        }
-        return false;
+        return row >= 0 && col >= 0 && row < N && col < N;
     }
 
 }
