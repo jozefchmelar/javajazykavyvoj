@@ -20,7 +20,7 @@ public class main {
         System.out.println(Week1.nearestPrime(40));
         System.out.println(Week1.sin(0.1, 5));
         System.out.println(Week1.numberOfLockers(7));
-//        Week2.queenProblem();©ö
+        Week2.queenProblem();
 //        Week2.solveKingsTraversal();
 //        Week2.pirati - nemam
 //        Week3.baseConverter(55, 10, 12);
