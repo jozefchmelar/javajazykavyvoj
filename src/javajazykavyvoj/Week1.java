@@ -82,7 +82,7 @@ public class Week1 {
         ArrayList<Locker> lockers = new ArrayList<>(); // casue we use a lot of get(number) :)
         int openedLockers = numberOfLockers;
         lockers.add(null); // no locker 0 , we start couting from locker no.1 so my get(1) is locker no 1
-        for (int i = 1; i <= numberOfLockers; i++) {   // locker 1-n
+        for (int i = 1; i <= numberOfLockers; i++) {   // locker [1-n]
             lockers.add(new Locker());
         }
         for (int k = 2; k <= numberOfLockers; k++) { // k-nth locker 
