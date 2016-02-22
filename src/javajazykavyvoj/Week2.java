@@ -51,20 +51,20 @@ public class Week2 {
         for (int i = 1; i <= chessboardSize / 2; i++) {
             x = i;
             y = 1 + ((2 * i + chessboardSize / 2 - 3) % chessboardSize);
-            System.out.println(numberToLetter(x) + " " + y);
             board[x][y] = QUEEN;
             x = chessboardSize + 1 - i;
             y = chessboardSize - ((2 * i + chessboardSize / 2 - 3) % chessboardSize);
             board[x][y] = QUEEN;
-            System.out.println(numberToLetter(x) + " " + y);
         }
-        for (int i = 1; i <= 8; i++) {
-            for (int j = 1; j <= 8; j++) {
+        System.out.println();
+        for (int i = 8; i >= 1; i--) {
+            for (int j = 8; j >= 1; j--) {
                 String test = "" + board[i][j];
                 System.out.printf("%1s ", test);
-            }
+            }     
             System.out.println();
         }
+
     }
 
     /**
@@ -74,7 +74,8 @@ public class Week2 {
      * @return
      */
     private static char numberToLetter(int number) {
-        return (char) (number + '`');
+        char toLetter = ((char) (number + '`'));
+        return Character.toUpperCase(toLetter);
     }
 
     /**
